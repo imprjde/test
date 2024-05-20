@@ -44,6 +44,6 @@ const authOptions = {
   },
 };
 
-const handler = NextAuth(authOptions);
+const User = NextAuth(authOptions);
 
-export { handler as GET, handler as POST };
+export { User as GET, User as POST };
