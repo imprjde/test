@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { connectMongoDB } from "@/utils/mongodbConnect";
 import Saved from "@/models/saved";
-let HBC = "123";
+
 export const POST = async (req, res) => {
   let { savedUserEmail, postId, thumbnail } = await req.json();
 
@@ -26,7 +26,7 @@ export const POST = async (req, res) => {
   }
 };
 export const GET = async (req, { params }) => {
-  const url = new URL(req.url, HBC);
+  const url = new URL(req.url, process.env.CORS);
   const searchParams = new URLSearchParams(url.search);
   const id = searchParams.get("id");
 
@@ -57,7 +57,7 @@ export const GET = async (req, { params }) => {
 };
 
 export const DELETE = async (req, res) => {
-  const url = new URL(req.url, HBC);
+  const url = new URL(req.url, process.env.CORS);
   const searchParams = new URLSearchParams(url.search);
   const id = searchParams.get("id");
 
