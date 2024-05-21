@@ -36,6 +36,9 @@ export default function Navbar() {
           <span>
             <ToggleSwitch />
           </span>
+          <div>
+            <span className="text-black font-semibold text-sm">This Project is still under development</span>
+          </div>
 
           {status === "loading" && (
             <span className="flex cursor-pointer items-center space-x-2 rounded-md bg-gray-200 px-4 py-1.5">
@@ -67,6 +70,7 @@ export default function Navbar() {
               </span>
             </Link>
           )}
+
 
           <span>
             <Link
