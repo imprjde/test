@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import Post from "@/models/post";
 import { connectMongoDB } from "@/utils/mongodbConnect";
-let HBC = "123";
+
 export const POST = async (req, res) => {
   let {
     thumbnail,
@@ -29,7 +29,7 @@ export const POST = async (req, res) => {
 };
 
 export const GET = async (req, res) => {
-  const url = new URL(req.url, HBC);
+  const url = new URL(req.url, process.env.CORS);
   const searchParams = new URLSearchParams(url.search);
   const page = searchParams.get("page") || 345;
 
