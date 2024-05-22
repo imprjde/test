@@ -37,7 +37,9 @@ export default function Navbar() {
             <ToggleSwitch />
           </span>
           <div>
-            <span className="text-black font-semibold text-sm">This Project is still under development</span>
+            <span className="text-black font-semibold text-sm">
+              This Project is still under development, Version 1.0
+            </span>
           </div>
 
           {status === "loading" && (
@@ -70,7 +72,6 @@ export default function Navbar() {
               </span>
             </Link>
           )}
-
 
           <span>
             <Link
