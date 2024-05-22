@@ -2,9 +2,9 @@ import { NextResponse } from "next/server";
 import { connectMongoDB } from "@/utils/mongodbConnect";
 import Post from "@/models/post";
 
-let HBC = "123";
+
 export const GET = async (req, { params }) => {
-  const url = new URL(req.url, HBC);
+  const url = new URL(req.url, process.env.CORS);
   const searchParams = new URLSearchParams(url.search);
   const slug = searchParams.get("slug");
   const id = slug.charAt(0).toUpperCase() + slug.slice(1);

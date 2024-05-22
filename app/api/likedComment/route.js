@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { connectMongoDB } from "@/utils/mongodbConnect";
 import LikedComment from "@/models/likedComments";
 import Comment from "@/models/comment";
-let HBC = "123";
+
 export const POST = async (req, res) => {
   let { userId, commentId } = await req.json();
 
@@ -29,7 +29,7 @@ export const GET = async (req, res) => {
   console.log(
     " RUNNNG RUNNNG RUNNNG RUNNNG RUNNNG RUNNNG RUNNNG RUNNNG RUNNNG RUNNNG RUNNNG RUNNNG "
   );
-  const url = new URL(req.url, HBC);
+  const url = new URL(req.url, process.env.CORS);
   const searchParams = new URLSearchParams(url.search);
   const userId = searchParams.get("slug");
   const commentId = searchParams.get("postId");
@@ -51,7 +51,7 @@ export const GET = async (req, res) => {
 };
 
 export const PUT = async (req, res) => {
-  const url = new URL(req.url, HBC);
+  const url = new URL(req.url, process.env.CORS);
   const searchParams = new URLSearchParams(url.search);
   const id = searchParams.get("slug");
   const slug = searchParams.get("ID");
