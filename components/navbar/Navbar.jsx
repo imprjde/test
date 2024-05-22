@@ -38,7 +38,7 @@ export default function Navbar() {
           </span>
           <div>
             <span className="text-black font-semibold text-sm">
-              This Project is still under development, Version 1.0
+              This Project is still under development, Version 1.1.0
             </span>
           </div>
 
