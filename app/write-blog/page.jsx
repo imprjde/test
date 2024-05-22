@@ -10,7 +10,7 @@ import { IoClose } from "react-icons/io5";
 import { Toaster, toast } from "sonner";
 import SignInPopup from "@/components/signinPopup/SignInPopup";
 
-export default function page() {
+function page() {
   const [thumbnail, setThumbnail] = useState(null);
   const [picUrl, setPicUrl] = useState(null);
   const [title, setTitle] = useState("");
@@ -282,3 +282,5 @@ export default function page() {
     </>
   );
 }
+
+export default page;
